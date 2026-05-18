@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Area — Teen Faith Lifesaver</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0a0f1a;color:#fff;line-height:1.6;}
+        .container{max-width:1000px;margin:0 auto;padding:0 24px;}
+        
+        /* Nav */
+        nav{position:sticky;top:0;background:rgba(10,15,26,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+        .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
+        .logo-icon{background:linear-gradient(135deg,#1e3a5f,#c41e3a);color:#fff;font-size:1rem;font-weight:900;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .logo-text{display:flex;flex-direction:column;}
+        .logo-top{font-size:0.9rem;font-weight:900;color:#fff;letter-spacing:0.02em;line-height:1.1;}
+        .logo-bottom{font-size:0.6rem;font-weight:600;color:#c41e3a;letter-spacing:0.05em;text-transform:uppercase;}
+        .nav-links{display:flex;gap:32px;}
+        .nav-links a{color:#94a3b8;text-decoration:none;font-size:0.9rem;font-weight:600;}
+        .nav-links a:hover{color:#fff;}
+        
+        /* Hero */
+        .hero{text-align:center;padding:60px 24px 40px;background:linear-gradient(180deg,#0a0f1a 0%,#1a1f2e 100%);}
+        .hero h1{font-size:2.5rem;font-weight:900;margin-bottom:16px;}
+        .hero h1 span{color:#c41e3a;}
+        .hero p{color:#94a3b8;}
+        
+        /* Progress */
+        .progress-section{padding:40px 24px;background:#111827;}
+        .progress-bar{height:8px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;margin-bottom:16px;}
+        .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#c41e3a,#dc2626);transition:width 0.3s;}
+        .progress-text{display:flex;justify-content:space-between;color:#94a3b8;font-size:0.9rem;}
+        
+        /* Modules */
+        .section{padding:60px 24px;}
+        h2{font-size:1.75rem;font-weight:900;margin-bottom:32px;}
+        h2 span{color:#c41e3a;}
+        .modules-list{display:flex;flex-direction:column;gap:16px;}
+        .module-row{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);text-decoration:none;color:#fff;transition:transform 0.2s;}
+        .module-row:hover{transform:translateX(8px);}
+        .module-status{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+        .module-status.locked{background:rgba(255,255,255,0.1);color:#64748b;}
+        .module-status.unlocked{background:#c41e3a;color:#fff;}
+        .module-status.completed{background:#10b981;color:#fff;}
+        .module-info{flex:1;}
+        .module-info h3{font-size:1.1rem;font-weight:800;margin-bottom:4px;}
+        .module-info p{color:#94a3b8;font-size:0.9rem;}
+        .module-arrow{color:#64748b;}
+        
+        /* Tools */
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px;}
+        .tool-card{background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);}
+        .tool-card h4{font-size:1rem;font-weight:700;margin-bottom:8px;color:#c41e3a;}
+        .tool-card p{color:#94a3b8;font-size:0.85rem;}
+        
+        footer{padding:40px 24px;text-align:center;color:#64748b;border-top:1px solid rgba(255,255,255,0.05);}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="logo-mark">
+                    <div class="logo-icon">TFL</div>
+                    <div class="logo-text">
+                        <span class="logo-top">TEEN FAITH LIFESAVER</span>
+                        <span class="logo-bottom">Keep Them Catholic</span>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="/members.html">Modules</a>
+                    <a href="/thank-you.html">Resources</a>
+                    <a href="#">Community</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome Back, <span>Parent</span></h1>
+            <p>Continue your journey to keep your teen Catholic.</p>
+        </div>
+    </section>
+    
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width:0%"></div>
+            </div>
+            <div class="progress-text">
+                <span>Your Progress</span>
+                <span>0 of 5 modules completed</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2>Course <span>Modules</span></h2>
+            <div class="modules-list">
+                <a href="/modules/module-1.html" class="module-row">
+                    <div class="module-status unlocked">→</div>
+                    <div class="module-info">
+                        <h3>Module 1: The Retention Mindset</h3>
+                        <p>Why youth group isn't enough and the 3 conversations you must have before age 13.</p>
+                    </div>
+                    <div class="module-arrow">→</div>
+                </a>
+                <a href="#" class="module-row" style="opacity:0.6;">
+                    <div class="module-status locked">🔒</div>
+                    <div class="module-info">
+                        <h3>Module 2: The Inoculation Method</h3>
+                        <p>Complete Module 1 to unlock</p>
+                    </div>
+                    <div class="module-arrow">→</div>
+                </a>
+                <a href="#" class="module-row" style="opacity:0.6;">
+                    <div class="module-status locked">🔒</div>
+                    <div class="module-info">
+                        <h3>Module 3: The Environment Design</h3>
+                        <p>Complete Module 2 to unlock</p>
+                    </div>
+                    <div class="module-arrow">→</div>
+                </a>
+                <a href="#" class="module-row" style="opacity:0.6;">
+                    <div class="module-status locked">🔒</div>
+                    <div class="module-info">
+                        <h3>Module 4: The College Transition</h3>
+                        <p>Complete Module 3 to unlock</p>
+                    </div>
+                    <div class="module-arrow">→</div>
+                </a>
+                <a href="#" class="module-row" style="opacity:0.6;">
+                    <div class="module-status locked">🔒</div>
+                    <div class="module-info">
+                        <h3>Module 5: The Crisis Protocol</h3>
+                        <p>Complete Module 4 to unlock</p>
+                    </div>
+                    <div class="module-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background:#111827;">
+        <div class="container">
+            <h2>Bonus <span>Tools</span></h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>📖 Parent Playbook</h4>
+                    <p>Complete 200+ page implementation guide.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>💬 Conversation Scripts</h4>
+                    <p>Word-for-word scripts for 47 situations.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>📊 Retention Assessment</h4>
+                    <p>Diagnose your teen's faith risk level.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>👥 Private Community</h4>
+                    <p>Connect with other Catholic parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Teen Faith Lifesaver. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
