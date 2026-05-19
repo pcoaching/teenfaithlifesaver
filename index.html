@@ -1,204 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teen Faith Lifesaver — Keep Them Catholic</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0a0f1a;color:#fff;line-height:1.6;}
-        .container{max-width:1200px;margin:0 auto;padding:0 24px;}
-        
-        /* Nav */
-        nav{position:sticky;top:0;background:rgba(10,15,26,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
-        .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-        .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
-        .logo-img{height:50px;width:auto;}
-        .logo-text{display:flex;flex-direction:column;}
-        .logo-top{font-size:0.9rem;font-weight:900;color:#fff;letter-spacing:0.02em;line-height:1.1;}
-        .logo-bottom{font-size:0.6rem;font-weight:600;color:#c41e3a;letter-spacing:0.05em;text-transform:uppercase;}
-        .nav-cta{background:linear-gradient(135deg,#c41e3a,#dc2626);color:#fff;padding:12px 24px;font-size:0.9rem;font-weight:700;text-decoration:none;border-radius:6px;}
-        
-        /* Hero */
-        .hero{text-align:center;padding:100px 24px 80px;background:linear-gradient(180deg,#0a0f1a 0%,#1a1f2e 100%);position:relative;overflow:hidden;}
-        .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(196,30,58,0.15) 0%,transparent 70%);pointer-events:none;}
-        .eyebrow{display:inline-block;font-size:0.85rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:24px;}
-        .hero h1{font-size:4rem;font-weight:900;margin-bottom:24px;line-height:1.05;position:relative;}
-        .hero h1 span{color:#c41e3a;}
-        .hero-subhead{font-size:1.35rem;color:#94a3b8;max-width:700px;margin:0 auto 40px;line-height:1.6;}
-        .hero-cta{display:inline-block;background:linear-gradient(135deg,#c41e3a,#dc2626);color:#fff;padding:20px 56px;font-size:1.15rem;font-weight:800;text-decoration:none;border-radius:8px;transition:all 0.3s;box-shadow:0 10px 40px rgba(196,30,58,0.3);}
-        .hero-cta:hover{transform:translateY(-3px);box-shadow:0 15px 50px rgba(196,30,58,0.4);}
-        .video-placeholder{width:100%;max-width:800px;height:450px;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:12px;margin:60px auto 0;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,255,255,0.1);}
-        .video-placeholder span{color:#64748b;font-size:1rem;}
-        
-        /* Sections */
-        section{padding:100px 24px;}
-        .section-dark{background:#0a0f1a;}
-        .section-light{background:#111827;}
-        
-        h2{font-size:2.5rem;font-weight:900;margin-bottom:24px;line-height:1.2;}
-        h2 span{color:#c41e3a;}
-        .section-intro{font-size:1.15rem;color:#94a3b8;max-width:700px;margin-bottom:60px;}
-        
-        /* Crisis */
-        .crisis-stat{text-align:center;margin-bottom:60px;}
-        .crisis-number{font-size:6rem;font-weight:900;color:#c41e3a;line-height:1;}
-        .crisis-label{font-size:1.1rem;color:#64748b;margin-top:8px;}
-        
-        /* Modules */
-        .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px;}
-        .module-card{background:linear-gradient(135deg,#1e293b,#0f172a);padding:32px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);}
-        .module-number{display:inline-block;background:#c41e3a;color:#fff;font-size:0.75rem;font-weight:800;padding:6px 12px;border-radius:4px;margin-bottom:16px;}
-        .module-card h3{font-size:1.25rem;font-weight:800;margin-bottom:12px;}
-        .module-card p{color:#94a3b8;font-size:0.95rem;}
-        
-        /* Includes */
-        .includes-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px;}
-        .include-item{display:flex;align-items:flex-start;gap:16px;}
-        .include-check{width:28px;height:28px;background:#c41e3a;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem;}
-        .include-item strong{display:block;margin-bottom:4px;}
-        .include-item span{color:#94a3b8;font-size:0.9rem;}
-        
-        /* Guarantee */
-        .guarantee-box{background:linear-gradient(135deg,#1e293b,#0f172a);padding:48px;border-radius:16px;text-align:center;border:1px solid rgba(196,30,58,0.3);max-width:800px;margin:0 auto;}
-        .guarantee-badge{display:inline-block;background:#c41e3a;color:#fff;font-size:0.8rem;font-weight:800;padding:8px 16px;border-radius:20px;margin-bottom:24px;}
-        
-        /* CTA Section */
-        .cta-section{text-align:center;background:linear-gradient(180deg,#1a1f2e 0%,#0a0f1a 100%);}
-        .price{font-size:4rem;font-weight:900;color:#fff;margin-bottom:16px;}
-        .price-note{color:#64748b;margin-bottom:40px;}
-        
-        /* Footer */
-        footer{padding:60px 24px;text-align:center;color:#64748b;border-top:1px solid rgba(255,255,255,0.05);}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teen Faith Lifesaver — Keep Them Catholic</title>
+<meta name="description" content="A proven system to keep your teen in the Church through their most vulnerable years (ages 13-23).">
+<link rel="stylesheet" href="assets/version2-styles.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-inner">
-                <a href="/" class="logo-mark">
-                    <img src="assets/logo-new.png" alt="Teen Faith Lifesaver" class="logo-img">
-                </a>
-                <a href="#buy" class="nav-cta">Get Access — $397</a>
-            </div>
-        </div>
-    </nav>
-    
-    <section class="hero">
-        <div class="container">
-            <div class="eyebrow">For Catholic parents who refuse to lose their teen to the culture</div>
-            <h1>The Silent Exodus Is Stealing Our Children — Here's How to <span>Keep Them Catholic</span></h1>
-            <p class="hero-subhead">A proven system to keep your teen in the Church through their most vulnerable years (ages 13-23)... even when public school, social media, and secular college are pulling them away.</p>
-            <a href="https://buy.stripe.com/test_placeholder" class="hero-cta">Get Instant Access — $397</a>
-            <div class="video-placeholder"><span>VSL Video Placeholder</span></div>
-        </div>
-    </section>
-    
-    <section class="section-light">
-        <div class="container">
-            <div class="crisis-stat">
-                <div class="crisis-number">70%</div>
-                <div class="crisis-label">of Catholic teens leave the Church by age 23</div>
-            </div>
-            <h2>The Crisis No One Talks About</h2>
-            <p class="section-intro">Seventy percent. That's how many Catholic teens leave the Church by age 23. Not "drift away." Not "become less active." They leave. Gone. Statistically, 7 out of 10 kids you see at Mass today won't be there in ten years.</p>
-            <p class="section-intro">You've seen the warning signs. Maybe your 14-year-old rolls their eyes during family prayer. Maybe your 16-year-old has "questions" that sound more like objections. Maybe they flat-out refuse to go to Mass.</p>
-            <p class="section-intro">The culture isn't just competing with the Church anymore — it's hunting your children. The parents who win? They started years earlier. They built something most Catholic families don't have: <strong>A system.</strong></p>
-        </div>
-    </section>
-    
-    <section class="section-dark">
-        <div class="container">
-            <h2>The <span>5-Module</span> Retention System</h2>
-            <p class="section-intro">This isn't another theology course your teen will ignore. It's a parent-led operating system for keeping your child Catholic.</p>
-            <div class="modules-grid">
-                <div class="module-card">
-                    <div class="module-number">MODULE 1</div>
-                    <h3>The Retention Mindset</h3>
-                    <p>Why "youth group" isn't enough (and can backfire). The 3 conversations you must have before age 13. How to become your teen's trusted source for hard questions.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 2</div>
-                    <h3>The Inoculation Method</h3>
-                    <p>Teaching apologetics without boring them. The "pre-bunking" technique that neutralizes cultural lies before they hit. How to handle doubt without panic.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 3</div>
-                    <h3>The Environment Design</h3>
-                    <p>Structuring your home so faith is inevitable, not optional. The 5-minute daily habit more powerful than any sermon. Creating Catholic peer connections.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 4</div>
-                    <h3>The College Transition</h3>
-                    <p>Preparing teens for the intellectual assault of secular university. The "faith stress test" every 17-year-old should pass. How to stay connected without hovering.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 5</div>
-                    <h3>The Crisis Protocol</h3>
-                    <p>What to do when your teen pushes back, shuts down, or walks away. The exact words that rebuild connection. When to get outside help (and when to push through).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section-light">
-        <div class="container">
-            <h2>Everything You Get</h2>
-            <p class="section-intro">The complete system for keeping your teen Catholic through their most vulnerable years.</p>
-            <div class="includes-list">
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>5 Core Training Modules</strong><span>Video + audio + transcript formats</span></div>
-                </div>
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>The Parent Playbook</strong><span>200+ page implementation guide</span></div>
-                </div>
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>Conversation Scripts</strong><span>Word-for-word scripts for 47 situations</span></div>
-                </div>
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>The Retention Assessment</strong><span>Diagnose your teen's risk level</span></div>
-                </div>
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>Monthly Live Q&A</strong><span>Get your specific questions answered</span></div>
-                </div>
-                <div class="include-item">
-                    <div class="include-check">✓</div>
-                    <div><strong>Private Community</strong><span>Connect with parents on the same mission</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section-dark">
-        <div class="container">
-            <div class="guarantee-box">
-                <div class="guarantee-badge">30-DAY GUARANTEE</div>
-                <h2>Try It Risk-Free</h2>
-                <p style="color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto;">Try the complete system for 30 days. If you don't feel more confident, more equipped, and more hopeful about your teen's faith, I'll refund every penny. No questions. No hassle. No risk.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section" id="buy">
-        <div class="container">
-            <h2>Don't Let Statistics Decide Your Child's Future</h2>
-            <p class="section-intro">Every month you delay, the culture digs deeper. The parents who act — who build the system before the crisis — are the ones whose kids stay Catholic.</p>
-            <div class="price">$397</div>
-            <p class="price-note">One-time payment. Lifetime access. 30-day guarantee.</p>
-            <a href="https://buy.stripe.com/test_placeholder" class="hero-cta">Get Instant Access — $397</a>
-            <p style="margin-top:24px;color:#64748b;font-size:0.9rem;">Secure checkout. Immediate access.</p>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Teen Faith Lifesaver. All rights reserved.</p>
-        </div>
-    </footer>
+<main>
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="wrap grid">
+<div>
+<span class="eyebrow">For Catholic Parents</span>
+<h1 class="headline">The Silent Exodus Is Stealing Our Children.</h1>
+<p class="sub">A proven system to keep your teen in the Church through their most vulnerable years (ages 13-23)... even when public school, social media, and secular college are pulling them away.</p>
+<div class="bullets">
+<div class="bullet">
+<span class="dot">✓</span>
+<span>Discover why <strong>70% of Catholic teens leave the Church</strong> by age 23 — and how to beat the odds.</span>
+</div>
+<div class="bullet">
+<span class="dot">✓</span>
+<span>Get the <strong>3 conversations you must have</strong> before age 13 to build unshakeable faith.</span>
+</div>
+<div class="bullet">
+<span class="dot">✓</span>
+<span>Learn the <strong>Crisis Protocol</strong> for when your teen pushes back, shuts down, or walks away.</span>
+</div>
+</div>
+<div class="cta-row">
+<a class="btn btn-primary" href="#buy">Get Instant Access — $397</a>
+<span class="micro">30-Day Money-Back Guarantee</span>
+</div>
+</div>
+<div class="card hero-card">
+<img src="assets/book-cover.jpg" alt="Teen Faith Lifesaver Book" style="width:100%; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+</div>
+</div>
+</section>
+
+<!-- CRISIS SECTION -->
+<section class="section video-section">
+<div class="wrap">
+<div class="video-box"><span>VSL Video Placeholder</span></div>
+</div>
+</section>
+
+<section class="section crisis-section">
+<div class="wrap" style="text-align:center;">
+<div class="crisis-stat">
+<div class="crisis-number">70%</div>
+<div class="crisis-label">of Catholic teens leave the Church by age 23</div>
+</div>
+<h2 style="color:#fff;">The Crisis No One Talks About</h2>
+<p style="color:rgba(255,255,255,.85); max-width:70ch; margin:1rem auto; font-size:1.1rem;">Seventy percent. That's how many Catholic teens leave the Church by age 23. Not "drift away." Not "become less active." They leave. Gone. Statistically, 7 out of 10 kids you see at Mass today won't be there in ten years.</p>
+<p style="color:rgba(255,255,255,.85); max-width:70ch; margin:1rem auto; font-size:1.1rem;">You've seen the warning signs. Maybe your 14-year-old rolls their eyes during family prayer. Maybe your 16-year-old has "questions" that sound more like objections. Maybe they flat-out refuse to go to Mass.</p>
+<p style="color:rgba(255,255,255,.85); max-width:70ch; margin:1rem auto; font-size:1.1rem;">The culture isn't just competing with the Church anymore — it's hunting your children. The parents who win? They started years earlier. They built something most Catholic families don't have: <strong>A system.</strong></p>
+</div>
+</section>
+
+<!-- 3 PROBLEMS SECTION -->
+<section class="section">
+<div class="wrap cols-3">
+<article class="box">
+<h3>Youth Group Isn't Enough</h3>
+<p>Most parents outsource faith formation to youth group. By the time your teen is rolling their eyes, the battle is half lost.</p>
+</article>
+<article class="box">
+<h3>The Culture Is Relentless</h3>
+<p>Public school, social media, and secular college are pulling your teen away 24/7. You need a system to fight back.</p>
+</article>
+<article class="box">
+<h3>Preparation Beats Panic</h3>
+<p>The parents who win start earlier and build something different. This is that system.</p>
+</article>
+</div>
+</section>
+
+<!-- 5 MODULES SECTION -->
+<section class="section">
+<div class="wrap card band">
+<div>
+<h2>5 Modules. One Mission: Keep Them Catholic.</h2>
+<p class="light">From the Retention Mindset to the Crisis Protocol — everything you need to guide your teen through their most vulnerable years.</p>
+<a class="btn btn-primary" href="#buy">Get the Complete System — $397</a>
+</div>
+<div class="stack">
+<div class="box">
+<h3>The Retention Mindset</h3>
+<p>Why youth group fails and the 3 conversations you need to have before age 13.</p>
+</div>
+<div class="box">
+<h3>The Inoculation Method</h3>
+<p>Teaching apologetics without boring them.</p>
+</div>
+<div class="box">
+<h3>Environment Design</h3>
+<p>Structuring your home so faith is inevitable.</p>
+</div>
+<div class="box">
+<h3>The College Transition</h3>
+<p>Preparing for the intellectual assault of secular university.</p>
+</div>
+<div class="box">
+<h3>The Crisis Protocol</h3>
+<p>What to do when they push back or walk away.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EVERYTHING YOU GET SECTION -->
+<section class="section includes-section">
+<div class="wrap">
+<h2 style="text-align:center; color:#fff; margin-bottom:2rem;">Everything You Get</h2>
+<p style="text-align:center; color:rgba(255,255,255,.8); max-width:60ch; margin:0 auto 2rem;">The complete system for keeping your teen Catholic through their most vulnerable years.</p>
+<div class="includes-list">
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>5 Core Training Modules</strong><span>Video + audio + transcript formats</span></div>
+</div>
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>The Parent Playbook</strong><span>200+ page implementation guide</span></div>
+</div>
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>Conversation Scripts</strong><span>Word-for-word scripts for 47 situations</span></div>
+</div>
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>The Retention Assessment</strong><span>Diagnose your teen's risk level</span></div>
+</div>
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>Monthly Live Q&A</strong><span>Get your specific questions answered</span></div>
+</div>
+<div class="include-item">
+<div class="include-check">✓</div>
+<div><strong>Private Community</strong><span>Connect with parents on the same mission</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GUARANTEE SECTION -->
+<section class="section guarantee-section">
+<div class="wrap">
+<div class="guarantee-box">
+<div class="guarantee-badge">30-Day Money-Back Guarantee</div>
+<h2 style="color:#fff;">Try It Risk-Free</h2>
+<p style="color:rgba(255,255,255,.85); max-width:60ch; margin:1rem auto;">Go through the first two modules. Use the Retention Assessment. Try the conversation scripts. If you don't feel more confident about keeping your teen Catholic, email us within 30 days for a full refund. No questions asked.</p>
+</div>
+</div>
+</section>
+
+<!-- BUY SECTION -->
+<section class="section" id="buy">
+<div class="wrap" style="text-align:center;">
+<h2 style="font-size:clamp(2rem,4vw,3.5rem); margin-bottom:1rem; color:#fff;">Don't Let Statistics Decide Your Child's Future</h2>
+<p class="light" style="font-size:1.2rem; max-width:60ch; margin:0 auto 2rem; color:rgba(255,255,255,.8);">Join hundreds of Catholic parents who refuse to lose their teens to the culture.</p>
+<div style="font-size:4rem; font-weight:900; margin-bottom:1rem; color:#fff;">$397</div>
+<a class="btn btn-primary" href="https://buy.stripe.com/test_placeholder" style="font-size:1.2rem; padding:1rem 2rem;">Get Access Now</a>
+<p class="micro" style="margin-top:1rem;">30-Day Money-Back Guarantee</p>
+</div>
+</section>
+
+<footer>
+<div class="wrap" style="text-align:center; color:rgba(255,255,255,.6);">
+<p>© 2026 Teen Faith Lifesaver. All rights reserved.</p>
+</div>
+</footer>
+</main>
 </body>
 </html>
