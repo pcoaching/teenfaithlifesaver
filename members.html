@@ -5,57 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Area — Teen Faith Lifesaver</title>
     <style>
+        :root {
+            --bg: #07142d;
+            --bg2: #123c8f;
+            --surface: rgba(255,255,255,.9);
+            --ink: #10203e;
+            --muted: #4b5b7a;
+            --gold: #ffb400;
+            --orange: #ff7a00;
+            --shadow: 0 18px 50px rgba(4,16,40,.22);
+            --radius: 24px;
+        }
         *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0a0f1a;color:#fff;line-height:1.6;}
+        body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:radial-gradient(circle at top,#2e6bff 0%,#123c8f 28%,#07142d 76%);color:#fff;line-height:1.6;min-height:100vh;}
         .container{max-width:1000px;margin:0 auto;padding:0 24px;}
         
         /* Nav */
-        nav{position:sticky;top:0;background:rgba(10,15,26,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
+        nav{position:sticky;top:0;background:radial-gradient(circle at top,#2e6bff 0%,#123c8f 28%,#07142d 76%);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
         .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
         .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
         .logo-img{height:50px;width:auto;}
-        .logo-text{display:flex;flex-direction:column;}
-        .logo-top{font-size:0.9rem;font-weight:900;color:#fff;letter-spacing:0.02em;line-height:1.1;}
-        .logo-bottom{font-size:0.6rem;font-weight:600;color:#c41e3a;letter-spacing:0.05em;text-transform:uppercase;}
         .nav-links{display:flex;gap:32px;}
-        .nav-links a{color:#94a3b8;text-decoration:none;font-size:0.9rem;font-weight:600;}
+        .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:0.9rem;font-weight:600;transition:color 0.2s;}
         .nav-links a:hover{color:#fff;}
         
         /* Hero */
-        .hero{text-align:center;padding:60px 24px 40px;background:linear-gradient(180deg,#0a0f1a 0%,#1a1f2e 100%);}
-        .hero h1{font-size:2.5rem;font-weight:900;margin-bottom:16px;}
-        .hero h1 span{color:#c41e3a;}
-        .hero p{color:#94a3b8;}
+        .hero{text-align:center;padding:40px 24px;}
+        .hero h1{font-size:2.5rem;font-weight:900;margin-bottom:16px;color:#fff;}
+        .hero h1 span{color:var(--gold);}
+        .hero p{color:rgba(255,255,255,.8);}
         
         /* Progress */
-        .progress-section{padding:40px 24px;background:#111827;}
+        .progress-section{padding:40px 24px;}
         .progress-bar{height:8px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;margin-bottom:16px;}
-        .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#c41e3a,#dc2626);transition:width 0.3s;}
-        .progress-text{display:flex;justify-content:space-between;color:#94a3b8;font-size:0.9rem;}
+        .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--orange));transition:width 0.3s;}
+        .progress-text{display:flex;justify-content:space-between;color:rgba(255,255,255,.7);font-size:0.9rem;}
         
         /* Modules */
         .section{padding:60px 24px;}
-        h2{font-size:1.75rem;font-weight:900;margin-bottom:32px;}
-        h2 span{color:#c41e3a;}
+        h2{font-size:1.75rem;font-weight:900;margin-bottom:32px;color:#fff;}
+        h2 span{color:var(--gold);}
         .modules-list{display:flex;flex-direction:column;gap:16px;}
-        .module-row{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);text-decoration:none;color:#fff;transition:transform 0.2s;}
+        .module-row{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,0.1);text-decoration:none;color:#fff;transition:transform 0.2s;}
         .module-row:hover{transform:translateX(8px);}
         .module-status{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-        .module-status.locked{background:rgba(255,255,255,0.1);color:#64748b;}
-        .module-status.unlocked{background:#c41e3a;color:#fff;}
-        .module-status.completed{background:#10b981;color:#fff;}
+        .module-status.locked{background:rgba(255,255,255,0.1);color:rgba(255,255,255,.5);}
+        .module-status.unlocked{background:linear-gradient(135deg,var(--gold),var(--orange));color:#10203e;}
+        .module-status.completed{background:#13b86a;color:#fff;}
         .module-info{flex:1;}
         .module-info h3{font-size:1.1rem;font-weight:800;margin-bottom:4px;}
-        .module-info p{color:#94a3b8;font-size:0.9rem;}
-        .module-arrow{color:#64748b;}
+        .module-info p{color:rgba(255,255,255,.7);font-size:0.9rem;}
+        .module-arrow{color:rgba(255,255,255,.5);}
         
         /* Tools */
         .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px;}
-        .tool-card{background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);}
-        .tool-card h4{font-size:1rem;font-weight:700;margin-bottom:8px;color:#c41e3a;}
-        .tool-card p{color:#94a3b8;font-size:0.85rem;}
+        .tool-card{background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,0.1);}
+        .tool-card h4{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--gold);}
+        .tool-card p{color:rgba(255,255,255,.7);font-size:0.85rem;}
         
-        footer{padding:40px 24px;text-align:center;color:#64748b;border-top:1px solid rgba(255,255,255,0.05);}
+        footer{padding:40px 24px;text-align:center;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,0.1);}
     </style>
 </head>
 <body>
@@ -142,7 +150,7 @@
         </div>
     </section>
     
-    <section class="section" style="background:#111827;">
+    <section class="section">
         <div class="container">
             <h2>Bonus <span>Tools</span></h2>
             <div class="tools-grid">

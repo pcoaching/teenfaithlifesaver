@@ -5,63 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome — Teen Faith Lifesaver</title>
     <style>
+        :root {
+            --bg: #07142d;
+            --bg2: #123c8f;
+            --surface: rgba(255,255,255,.9);
+            --ink: #10203e;
+            --muted: #4b5b7a;
+            --gold: #ffb400;
+            --orange: #ff7a00;
+            --green: #13b86a;
+            --shadow: 0 18px 50px rgba(4,16,40,.22);
+            --radius: 24px;
+        }
         *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0a0f1a;color:#fff;line-height:1.6;}
+        body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:radial-gradient(circle at top,#2e6bff 0%,#123c8f 28%,#07142d 76%);color:#fff;line-height:1.6;min-height:100vh;}
         .container{max-width:1000px;margin:0 auto;padding:0 24px;}
         
         /* Nav */
-        nav{position:sticky;top:0;background:rgba(10,15,26,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
+        nav{position:sticky;top:0;background:radial-gradient(circle at top,#2e6bff 0%,#123c8f 28%,#07142d 76%);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
         .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
         .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
         .logo-img{height:50px;width:auto;}
-        .logo-text{display:flex;flex-direction:column;}
-        .logo-top{font-size:0.9rem;font-weight:900;color:#fff;letter-spacing:0.02em;line-height:1.1;}
-        .logo-bottom{font-size:0.6rem;font-weight:600;color:#c41e3a;letter-spacing:0.05em;text-transform:uppercase;}
         
         /* Hero */
-        .hero{text-align:center;padding:80px 24px 60px;background:linear-gradient(180deg,#0a0f1a 0%,#1a1f2e 100%);}
-        .confirmed-badge{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;padding:12px 24px;border-radius:50px;font-size:0.9rem;font-weight:700;margin-bottom:32px;}
-        .hero h1{font-size:3rem;font-weight:900;margin-bottom:16px;}
-        .hero h1 span{color:#c41e3a;}
-        .hero p{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 40px;}
+        .hero{text-align:center;padding:60px 24px 40px;}
+        .confirmed-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green),#0ea55a);color:#fff;padding:12px 24px;border-radius:999px;font-size:0.9rem;font-weight:700;margin-bottom:32px;}
+        .hero h1{font-size:3rem;font-weight:900;margin-bottom:16px;color:#fff;}
+        .hero h1 span{color:var(--gold);}
+        .hero p{color:rgba(255,255,255,.8);font-size:1.1rem;max-width:600px;margin:0 auto 40px;}
         
         /* Video */
-        .video-box{width:100%;max-width:700px;height:394px;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:12px;margin:0 auto 60px;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,255,255,0.1);}
-        .video-box span{color:#64748b;}
+        .video-box{width:100%;max-width:700px;height:394px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));border-radius:16px;margin:0 auto 60px;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,255,255,.2);}
+        .video-box span{color:rgba(255,255,255,.5);}
         
         /* Steps */
         .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-bottom:60px;}
-        .step-card{background:linear-gradient(135deg,#1e293b,#0f172a);padding:32px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.05);}
-        .step-number{width:48px;height:48px;background:#c41e3a;color:#fff;font-size:1.25rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-        .step-card h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
-        .step-card p{color:#94a3b8;font-size:0.95rem;}
+        .step-card{background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));padding:32px;border-radius:16px;text-align:center;border:1px solid rgba(255,255,255,0.1);}
+        .step-number{width:48px;height:48px;background:linear-gradient(135deg,var(--gold),var(--orange));color:#10203e;font-size:1.25rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+        .step-card h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;color:#fff;}
+        .step-card p{color:rgba(255,255,255,.7);font-size:0.95rem;}
         
         /* Modules */
         .section{padding:60px 24px;}
-        .section-light{background:#111827;}
-        h2{font-size:2rem;font-weight:900;margin-bottom:40px;text-align:center;}
-        h2 span{color:#c41e3a;}
+        h2{font-size:2rem;font-weight:900;margin-bottom:40px;text-align:center;color:#fff;}
+        h2 span{color:var(--gold);}
         .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-        .module-card{background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);text-decoration:none;color:#fff;display:block;transition:transform 0.2s;}
+        .module-card{background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,0.1);text-decoration:none;color:#fff;display:block;transition:transform 0.2s;}
         .module-card:hover{transform:translateY(-4px);}
-        .module-card h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;color:#c41e3a;}
-        .module-card p{color:#94a3b8;font-size:0.9rem;}
+        .module-card h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;color:var(--gold);}
+        .module-card p{color:rgba(255,255,255,.7);font-size:0.9rem;}
         
         /* Bonuses */
         .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px;}
-        .bonus-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:8px;text-align:center;}
-        .bonus-card h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;}
-        .bonus-card p{color:#64748b;font-size:0.8rem;}
+        .bonus-card{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));padding:20px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.08);}
+        .bonus-card h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;color:#fff;}
+        .bonus-card p{color:rgba(255,255,255,.6);font-size:0.8rem;}
         
         /* Guarantee */
-        .guarantee-box{background:linear-gradient(135deg,#1e293b,#0f172a);padding:40px;border-radius:16px;text-align:center;border:1px solid rgba(16,185,129,0.3);margin:60px 0;}
-        .guarantee-badge{display:inline-block;background:#10b981;color:#fff;font-size:0.75rem;font-weight:800;padding:8px 16px;border-radius:20px;margin-bottom:16px;}
+        .guarantee-box{background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.05));padding:40px;border-radius:16px;text-align:center;border:1px solid rgba(19,184,106,0.3);margin:60px 0;}
+        .guarantee-badge{display:inline-block;background:linear-gradient(135deg,var(--green),#0ea55a);color:#fff;font-size:0.75rem;font-weight:800;padding:8px 16px;border-radius:999px;margin-bottom:16px;}
         
         /* Support */
-        .support{text-align:center;padding:60px 24px;color:#64748b;}
-        .support a{color:#c41e3a;text-decoration:none;}
+        .support{text-align:center;padding:60px 24px;color:rgba(255,255,255,.6);}
+        .support a{color:var(--gold);text-decoration:none;}
         
-        footer{padding:40px 24px;text-align:center;color:#64748b;border-top:1px solid rgba(255,255,255,0.05);}
+        footer{padding:40px 24px;text-align:center;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,0.1);}
     </style>
 </head>
 <body>
@@ -102,7 +110,7 @@
         </div>
     </section>
     
-    <section class="section-light">
+    <section class="section">
         <div class="container">
             <h2>Your <span>5 Modules</span></h2>
             <div class="modules-grid">
@@ -162,7 +170,7 @@
             
             <div class="guarantee-box">
                 <div class="guarantee-badge">30-DAY GUARANTEE</div>
-                <p style="color:#94a3b8;">Not satisfied? Email us within 30 days for a full refund. No questions asked.</p>
+                <p style="color:rgba(255,255,255,.7);">Not satisfied? Email us within 30 days for a full refund. No questions asked.</p>
             </div>
         </div>
     </section>
