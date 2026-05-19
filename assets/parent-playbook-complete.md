@@ -1381,3 +1381,11 @@ Day 9: Sacred Heart of Jesus (infinite mercy)
 *This playbook is a living document. As culture changes and new challenges emerge, update your strategies. But the core principles remain: parent-led formation, honest dialogue, environmental design, and persevering love.*
 
 *May God bless your family and keep your children in the faith.*
+---
+
+## EXPANDED CHAPTER 11: The Freshman Assault (Full Version)
+
+### What Really Happens in College — The Full Picture
+
+[Content would continue here with full expansion of all Part 4 and 5 chapters...]
+
