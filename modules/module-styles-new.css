@@ -19,7 +19,7 @@ a{text-decoration:none;color:inherit}
 .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 
 /* Nav */
-nav{position:sticky;top:0;background:transparent;z-index:100;border-bottom:1px solid rgba(255,255,255,0.1)}
+nav{position:sticky;top:0;background:radial-gradient(circle at top,#2e6bff 0%,#123c8f 28%,#07142d 76%);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none}
 .logo-img{height:50px;width:auto}
